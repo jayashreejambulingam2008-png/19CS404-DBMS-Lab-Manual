@@ -46,124 +46,121 @@ Used to retrieve records from a table.
 SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
---
--- Paste Question 1 here
+INSERT INTO Student (student_id, student_name, department, marks)
+VALUES (101, 'Ravi', 'CSE', 85);
 
-```sql
--- Paste your SQL code below for Question 1
-```
+COMMIT;
 
 **Output:**
 
-![Output1](output.png)
+<img width="1078" height="366" alt="image" src="https://github.com/user-attachments/assets/4097f78e-af3c-491d-8bfc-ae2abca3b2b1" />
+
 
 **Question 2**
----
--- Paste Question 2 here
+INSERT ALL
+    INTO Student VALUES (102, 'Priya', 'ECE', 78)
+    INTO Student VALUES (103, 'Arun', 'CSE', 92)
+    INTO Student VALUES (104, 'Meena', 'IT', 88)
+SELECT * FROM dual;
 
-```sql
--- Paste your SQL code below for Question 2
-```
+COMMIT;
 
 **Output:**
 
-![Output2](output.png)
+<img width="955" height="387" alt="image" src="https://github.com/user-attachments/assets/518c6a45-0e17-4b1d-a338-ffc73ad98403" />
+
 
 **Question 3**
----
--- Paste Question 3 here
-
-```sql
--- Paste your SQL code below for Question 3
-```
+SELECT * FROM Student;
 
 **Output:**
+<img width="1135" height="417" alt="image" src="https://github.com/user-attachments/assets/9f2b3423-b057-4a0c-bc03-ecbb3834a8d0" />
 
-![Output3](output.png)
+
 
 **Question 4**
----
--- Paste Question 4 here
-
-```sql
--- Paste your SQL code below for Question 4
-```
+SELECT * FROM Student
+WHERE department = 'CSE';
 
 **Output:**
 
-![Output4](output.png)
+<img width="1102" height="433" alt="image" src="https://github.com/user-attachments/assets/318c01d3-da0f-4ce5-a679-1c58a08fcee1" />
+
 
 **Question 5**
----
--- Paste Question 5 here
+UPDATE Student
+SET marks = 90
+WHERE student_id = 101;
 
-```sql
--- Paste your SQL code below for Question 5
-```
+COMMIT;
 
 **Output:**
 
-![Output5](output.png)
+<img width="1043" height="381" alt="image" src="https://github.com/user-attachments/assets/bb20d386-d2db-4263-9d43-25b07388f941" />
+
 
 **Question 6**
----
--- Paste Question 6 here
+UPDATE Student
+SET department = 'CSE'
+WHERE student_id = 102;
 
-```sql
--- Paste your SQL code below for Question 6
-```
+COMMIT;
 
 **Output:**
 
-![Output6](output.png)
+<img width="926" height="381" alt="image" src="https://github.com/user-attachments/assets/f1a80296-1a13-4eec-8dba-c9930db39dce" />
+
 
 **Question 7**
----
--- Paste Question 7 here
+DELETE FROM Student
+WHERE student_id = 104;
 
-```sql
--- Paste your SQL code below for Question 7
-```
+COMMIT;
 
 **Output:**
 
-![Output7](output.png)
+<img width="922" height="392" alt="image" src="https://github.com/user-attachments/assets/79cbf1d0-baa4-4056-b9bf-06c3ba86498e" />
+
 
 **Question 8**
----
--- Paste Question 8 here
-
-```sql
--- Paste your SQL code below for Question 8
-```
+SELECT * FROM Student
+WHERE marks > 85;
 
 **Output:**
+<img width="1027" height="318" alt="image" src="https://github.com/user-attachments/assets/5a63882e-fb93-4ca5-8bf7-ed124e25f795" />
 
-![Output8](output.png)
+
 
 **Question 9**
----
--- Paste Question 9 here
+CREATE TABLE CSE_Students (
+    student_id NUMBER,
+    student_name VARCHAR2(30),
+    department VARCHAR2(20),
+    marks NUMBER
+);
+INSERT INTO CSE_Students
+SELECT * FROM Student
+WHERE department = 'CSE';
 
-```sql
--- Paste your SQL code below for Question 9
-```
+COMMIT;
+SELECT * FROM CSE_Students;
 
 **Output:**
+<img width="927" height="376" alt="image" src="https://github.com/user-attachments/assets/6d2fbb59-e73a-4357-86cb-40a18843fa4b" />
 
-![Output9](output.png)
+
 
 **Question 10**
----
--- Paste Question 10 here
+DELETE FROM CSE_Students;
 
-```sql
--- Paste your SQL code below for Question 10
-```
+COMMIT;
+
+
 
 **Output:**
 
-![Output10](output.png)
+<img width="971" height="405" alt="image" src="https://github.com/user-attachments/assets/a6e44c85-3fbe-4e5e-8079-fa9d877ec8fa" />
+
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
