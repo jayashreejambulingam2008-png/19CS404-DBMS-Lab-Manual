@@ -37,124 +37,130 @@ DROP VIEW view_name;
 ```
 
 **Question 1**
---
--- Paste Question 1 here
-
-```sql
--- Paste your SQL code below for Question 1
-```
+SELECT *
+FROM employees
+WHERE salary > (SELECT AVG(salary) FROM employees);
 
 **Output:**
 
-![Output1](output.png)
+<img width="970" height="322" alt="image" src="https://github.com/user-attachments/assets/8abb4916-faaf-4230-9666-c552681c6f3f" />
+
 
 **Question 2**
----
--- Paste Question 2 here
-
-```sql
--- Paste your SQL code below for Question 2
-```
+CREATE TABLE employees (
+    emp_id NUMBER PRIMARY KEY,
+    emp_name VARCHAR2(50),
+    department VARCHAR2(50),
+    salary NUMBER
+);
 
 **Output:**
 
-![Output2](output.png)
+<img width="1032" height="402" alt="image" src="https://github.com/user-attachments/assets/392bfbfe-ca2d-413f-9359-5ff7646aa0f9" />
+
 
 **Question 3**
----
--- Paste Question 3 here
-
-```sql
--- Paste your SQL code below for Question 3
-```
+SELECT *
+FROM employees
+WHERE department IN (
+    SELECT department
+    FROM employees
+    WHERE salary > 40000
+);
 
 **Output:**
 
-![Output3](output.png)
+<img width="1043" height="417" alt="image" src="https://github.com/user-attachments/assets/777c6991-09ee-47ec-9360-b8358bb9feac" />
 
 **Question 4**
----
--- Paste Question 4 here
-
-```sql
--- Paste your SQL code below for Question 4
-```
+SELECT *
+FROM employees
+WHERE salary > ANY (
+    SELECT salary
+    FROM employees
+    WHERE department = 'HR'
+);
 
 **Output:**
 
-![Output4](output.png)
+<img width="942" height="422" alt="image" src="https://github.com/user-attachments/assets/c8e2356a-128f-4bc9-80de-f446b2857595" />
 
 **Question 5**
----
--- Paste Question 5 here
-
-```sql
--- Paste your SQL code below for Question 5
-```
+SELECT *
+FROM employees
+WHERE salary > ALL (
+    SELECT salary
+    FROM employees
+    WHERE department = 'HR'
+);
 
 **Output:**
 
-![Output5](output.png)
+<img width="1105" height="412" alt="image" src="https://github.com/user-attachments/assets/005003b4-3a33-4d0f-b232-75bc706613ba" />
+
 
 **Question 6**
----
--- Paste Question 6 here
-
-```sql
--- Paste your SQL code below for Question 6
-```
+SELECT e.emp_id, e.emp_name, e.department, e.salary
+FROM employees e
+WHERE e.salary > (
+    SELECT AVG(e2.salary)
+    FROM employees e2
+    WHERE e2.department = e.department
+);
 
 **Output:**
 
-![Output6](output.png)
+<img width="1012" height="328" alt="image" src="https://github.com/user-attachments/assets/8e05fde3-0183-4710-888a-bc7fae3bdf53" />
+
 
 **Question 7**
----
--- Paste Question 7 here
+CREATE VIEW it_employees AS
+SELECT emp_id, emp_name, salary
+FROM employees
+WHERE department = 'IT';
 
-```sql
--- Paste your SQL code below for Question 7
-```
+SELECT * FROM it_employees;
 
 **Output:**
 
-![Output7](output.png)
+<img width="965" height="343" alt="image" src="https://github.com/user-attachments/assets/b8d80e7c-98c8-4a55-ba03-69f0eba7849d" />
+
 
 **Question 8**
----
--- Paste Question 8 here
+CREATE VIEW high_salary_employees AS
+SELECT emp_id, emp_name, department, salary
+FROM employees
+WHERE salary > 40000;
 
-```sql
--- Paste your SQL code below for Question 8
-```
+SELECT * FROM high_salary_employees;
+
 
 **Output:**
 
-![Output8](output.png)
+<img width="992" height="465" alt="image" src="https://github.com/user-attachments/assets/15b7f299-a333-4d53-9488-8ec255a69793" />
+
 
 **Question 9**
----
--- Paste Question 9 here
+CREATE VIEW department_avg_salary AS
+SELECT department, AVG(salary) AS average_salary
+FROM employees
+GROUP BY department;
 
-```sql
--- Paste your SQL code below for Question 9
-```
+SELECT * FROM department_avg_salary;
+
 
 **Output:**
 
-![Output9](output.png)
+<img width="877" height="345" alt="image" src="https://github.com/user-attachments/assets/da5b797b-0d5b-48e6-9e1e-3455a1dc4d01" />
+
 
 **Question 10**
----
--- Paste Question 10 here
-
-```sql
--- Paste your SQL code below for Question 10
-```
+DROP VIEW high_salary_employees;
 
 **Output:**
 
-![Output10](output.png)
+<img width="937" height="390" alt="image" src="https://github.com/user-attachments/assets/a119f979-bd57-4f82-945a-328fb884c345" />
+
 
 
 ## RESULT
