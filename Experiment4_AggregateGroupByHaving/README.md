@@ -37,124 +37,106 @@ HAVING condition;
 ```
 
 **Question 1**
---
--- Paste Question 1 here
+SELECT MIN(salary) AS minimum_salary
+FROM staff;
 
-```sql
--- Paste your SQL code below for Question 1
-```
 
 **Output:**
 
-![Output1](output.png)
+<img width="877" height="367" alt="image" src="https://github.com/user-attachments/assets/485a83cf-1928-4df9-a52f-ee1ffe2793c3" />
+
 
 **Question 2**
----
--- Paste Question 2 here
+SELECT MAX(salary) AS maximum_salary
+FROM staff;
 
-```sql
--- Paste your SQL code below for Question 2
-```
 
 **Output:**
 
-![Output2](output.png)
+<img width="875" height="425" alt="image" src="https://github.com/user-attachments/assets/54e7616e-4a2e-4675-867b-45873591117e" />
+
 
 **Question 3**
----
--- Paste Question 3 here
+SELECT SUM(salary) AS total_salary
+FROM staff;
 
-```sql
--- Paste your SQL code below for Question 3
-```
 
 **Output:**
+<img width="898" height="355" alt="image" src="https://github.com/user-attachments/assets/18d88874-fea8-44c7-a605-e3091f0b11d9" />
 
-![Output3](output.png)
+
 
 **Question 4**
----
--- Paste Question 4 here
-
-```sql
--- Paste your SQL code below for Question 4
-```
+SELECT AVG(salary) AS average_salary
+FROM staff;
 
 **Output:**
 
-![Output4](output.png)
+<img width="762" height="412" alt="image" src="https://github.com/user-attachments/assets/1c6cc5d3-923c-4bff-af8c-0de06fc921b0" />
+
 
 **Question 5**
----
--- Paste Question 5 here
+SELECT COUNT(*) AS total_staff
+FROM staff;
 
-```sql
--- Paste your SQL code below for Question 5
-```
 
 **Output:**
 
-![Output5](output.png)
+<img width="852" height="402" alt="image" src="https://github.com/user-attachments/assets/d52e78fe-bd6d-43e0-98d3-7dc02b1d0e90" />
+
 
 **Question 6**
----
--- Paste Question 6 here
+SELECT department, COUNT(*) AS staff_count
+FROM staff
+GROUP BY department;
 
-```sql
--- Paste your SQL code below for Question 6
-```
 
 **Output:**
-
-![Output6](output.png)
+<img width="842" height="391" alt="image" src="https://github.com/user-attachments/assets/bba91943-277c-4b58-abe9-4337890d1014" />
 
 **Question 7**
----
--- Paste Question 7 here
+SELECT department, SUM(salary) AS total_salary
+FROM staff
+GROUP BY department;
 
-```sql
--- Paste your SQL code below for Question 7
-```
 
 **Output:**
 
-![Output7](output.png)
+<img width="882" height="393" alt="image" src="https://github.com/user-attachments/assets/6917be05-80de-4f4f-9adf-562b4394ade8" />
 
 **Question 8**
----
--- Paste Question 8 here
+SELECT department, AVG(salary) AS average_salary
+FROM staff
+GROUP BY department;
 
-```sql
--- Paste your SQL code below for Question 8
-```
 
 **Output:**
 
-![Output8](output.png)
+<img width="901" height="355" alt="image" src="https://github.com/user-attachments/assets/835b9696-1dde-4e58-b537-211656404768" />
+
 
 **Question 9**
----
--- Paste Question 9 here
-
-```sql
--- Paste your SQL code below for Question 9
-```
+SELECT department, COUNT(*) AS staff_count
+FROM staff
+GROUP BY department
+HAVING COUNT(*) > 2;
 
 **Output:**
 
-![Output9](output.png)
+<img width="842" height="367" alt="image" src="https://github.com/user-attachments/assets/9c721cdc-ea78-4100-9e1e-95f3b09a56a5" />
+
 
 **Question 10**
----
--- Paste Question 10 here
+SELECT department, SUM(salary) AS total_salary
+FROM staff
+GROUP BY department
+HAVING SUM(salary) > 150000;
 
-```sql
--- Paste your SQL code below for Question 10
-```
 
 **Output:**
+<img width="906" height="347" alt="image" src="https://github.com/user-attachments/assets/31029866-f540-418f-acfd-bbf7505dc71b" />
 
-![Output10](output.png)
+
 
 
 ## RESULT
