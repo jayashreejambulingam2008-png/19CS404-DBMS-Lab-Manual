@@ -53,124 +53,163 @@ ON table1.column = table2.column;
 ```
 
 **Question 1**
---
--- Paste Question 1 here
-
-```sql
--- Paste your SQL code below for Question 1
+Display employee names along with their department names using INNER JOIN.
 ```
-
+SELECT employees.employee_name, departments.department_name
+FROM employees
+INNER JOIN departments
+ON employees.department_id = departments.department_id;
+```
 **Output:**
 
-![Output1](output.png)
+<img width="950" height="386" alt="image" src="https://github.com/user-attachments/assets/f2a9410a-d962-4ed0-af6d-d3ff96fda7c3" />
+
 
 **Question 2**
----
--- Paste Question 2 here
-
-```sql
--- Paste your SQL code below for Question 2
+Display all employees along with their department names using LEFT JOIN.
 ```
+SELECT employees.employee_name, departments.department_name
+FROM employees
+LEFT JOIN departments
+ON employees.department_id = departments.department_id;
+```
+
 
 **Output:**
 
-![Output2](output.png)
+<img width="967" height="402" alt="image" src="https://github.com/user-attachments/assets/8786bb69-a63f-4319-ac7a-ae6e1465ad67" />
+
 
 **Question 3**
----
--- Paste Question 3 here
-
-```sql
--- Paste your SQL code below for Question 3
+Display all departments along with the employees working in them using RIGHT JOIN.
+```
+SELECT employees.employee_name, departments.department_name
+FROM employees
+RIGHT JOIN departments
+ON employees.department_id = departments.department_id;
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="940" height="382" alt="image" src="https://github.com/user-attachments/assets/30c291e1-b6cd-42aa-861c-2ea7bb1f56ad" />
+
 
 **Question 4**
----
--- Paste Question 4 here
-
-```sql
--- Paste your SQL code below for Question 4
+Display all employees and departments using FULL OUTER JOIN.
+```
+SELECT employees.employee_name, departments.department_name
+FROM employees
+FULL OUTER JOIN departments
+ON employees.department_id = departments.department_id;
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="941" height="455" alt="image" src="https://github.com/user-attachments/assets/9cf232da-3374-45d6-bdae-c65b7378e8d1" />
+
+
 
 **Question 5**
----
--- Paste Question 5 here
-
-```sql
--- Paste your SQL code below for Question 5
+Display employee names, department names, and salaries using INNER JOIN.
+```
+SELECT employees.employee_name,
+       departments.department_name,
+       employees.salary
+FROM employees
+INNER JOIN departments
+ON employees.department_id = departments.department_id;
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="956" height="448" alt="image" src="https://github.com/user-attachments/assets/f61c597c-68ec-4f24-ac2c-92339f0bfe24" />
+
+
 
 **Question 6**
----
--- Paste Question 6 here
-
-```sql
--- Paste your SQL code below for Question 6
+Display employees who are assigned to a department.
+```
+SELECT employees.employee_name, departments.department_name
+FROM employees
+INNER JOIN departments
+ON employees.department_id = departments.department_id;
 ```
 
 **Output:**
 
-![Output6](output.png)
+
+<img width="977" height="432" alt="image" src="https://github.com/user-attachments/assets/63720ee6-6200-4414-a43d-be98fadc1537" />
+
 
 **Question 7**
----
--- Paste Question 7 here
-
-```sql
--- Paste your SQL code below for Question 7
+Display all employees, including employees who are not assigned to any department
+```
+SELECT employees.employee_name, departments.department_name
+FROM employees
+LEFT JOIN departments
+ON employees.department_id = departments.department_id;
 ```
 
 **Output:**
 
-![Output7](output.png)
+
+<img width="922" height="441" alt="image" src="https://github.com/user-attachments/assets/0f225c01-8e48-4d28-a8a2-6d3337d697dd" />
+
 
 **Question 8**
----
--- Paste Question 8 here
-
-```sql
--- Paste your SQL code below for Question 8
+Display all departments, including departments that have no employees.
+```
+SELECT departments.department_name, employees.employee_name
+FROM employees
+RIGHT JOIN departments
+ON employees.department_id = departments.department_id;
 ```
 
 **Output:**
 
-![Output8](output.png)
+
+<img width="931" height="437" alt="image" src="https://github.com/user-attachments/assets/2b1f0704-a9e8-49fd-9fd1-7d230a7801a5" />
+
 
 **Question 9**
 ---
--- Paste Question 9 here
 
-```sql
--- Paste your SQL code below for Question 9
+Display the employee name, department name, and salary for employees earning more than 50,000.
+
+```
+SELECT employees.employee_name,
+       departments.department_name,
+       employees.salary
+FROM employees
+INNER JOIN departments
+ON employees.department_id = departments.department_id
+WHERE employees.salary > 50000;
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="885" height="385" alt="image" src="https://github.com/user-attachments/assets/faae84d2-fc0d-4438-9343-baafbf99e3f8" />
+
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+Display the number of employees in each department using JOIN and GROUP BY.
 
-```sql
--- Paste your SQL code below for Question 10
+```
+SELECT departments.department_name,
+       COUNT(employees.employee_id) AS employee_count
+FROM departments
+LEFT JOIN employees
+ON departments.department_id = employees.department_id
+GROUP BY departments.department_name;
 ```
 
 **Output:**
 
-![Output10](output.png)
+
+<img width="942" height="421" alt="image" src="https://github.com/user-attachments/assets/d648a79b-8847-4877-9ba4-6e0df491ef91" />
+
 
 
 ## RESULT
